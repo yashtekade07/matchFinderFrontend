@@ -1,6 +1,6 @@
 import { useState} from 'react'
 import axios from 'axios'
-
+const server="https://matchfinder.onrender.com"
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
     const [textArea, setTextArea] = useState("")
     const userId = user?.user_id
@@ -15,7 +15,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
         }
 
         try {
-            await axios.post('http://localhost:8000/message', { message })
+            await axios.post(`${server}/message`, { message })
             getUserMessages()
             getClickedUsersMessages()
             setTextArea("")

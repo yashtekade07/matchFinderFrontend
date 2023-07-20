@@ -3,7 +3,7 @@ import ChatInput from './ChatInput'
 import axios from 'axios'
 import {useState, useEffect} from "react"
 
-
+const server="https://matchfinder.onrender.com"
 const ChatDisplay = ({ user , clickedUser }) => {
     const userId = user?.user_id
     const clickedUserId = clickedUser?.user_id
@@ -12,7 +12,7 @@ const ChatDisplay = ({ user , clickedUser }) => {
 
     const getUsersMessages = async () => {
      try {
-            const response = await axios.get('http://localhost:8000/messages', {
+            const response = await axios.get(`${server}/messages`, {
                 params: { userId: userId, correspondingUserId: clickedUserId}
             })
          setUsersMessages(response.data)
@@ -23,7 +23,7 @@ const ChatDisplay = ({ user , clickedUser }) => {
 
     const getClickedUsersMessages = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/messages', {
+            const response = await axios.get(`${server}/messages`, {
                 params: { userId: clickedUserId , correspondingUserId: userId}
             })
             setClickedUsersMessages(response.data)
