@@ -3,7 +3,7 @@ import {useState} from 'react'
 import {useCookies} from 'react-cookie'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-const server="https://matchfinder.onrender.com"
+const server="https://matchfinder.onrender.com/onboarding"
 const OnBoarding = () => {
     const [cookies, setCookie, removeCookie] = useCookies(null)
     const [formData, setFormData] = useState({

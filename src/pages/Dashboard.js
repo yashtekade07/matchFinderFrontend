@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const userId = cookies.UserId
 
-    const server="https://matchfinder.onrender.com"
+    const server="https://matchfinder.onrender.com/dashboard"
     const getUser = async () => {
         try {
             const response = await axios.get(`${server}/user`, {
