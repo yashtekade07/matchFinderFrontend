@@ -25,7 +25,7 @@ const Dashboard = () => {
     }
     const getGenderedUsers = async () => {
         try {
-            const response = await axios.get(`${server}gendered-users`, {
+            const response = await axios.get(`${server}/gendered-users`, {
                 params: {gender: user?.gender_interest}
             })
             setGenderedUsers(response.data)
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put(`${server}addmatch`, {
+            await axios.put(`${server}/addmatch`, {
                 userId,
                 matchedUserId
             })
