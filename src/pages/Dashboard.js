@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import ChatContainer from '../components/ChatContainer'
 import {useCookies} from 'react-cookie'
 import axios from 'axios'
-
+const server="https://matchfinder.onrender.com"
 const Dashboard = () => {
     const [user, setUser] = useState(null)
     const [genderedUsers, setGenderedUsers] = useState(null)
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const userId = cookies.UserId
 
-    const server="https://matchfinder.onrender.com/"
+   
     const getUser = async () => {
         try {
             const response = await axios.get(`${server}/user`, {
