@@ -15,7 +15,9 @@ const Dashboard = () => {
    
     const getUser = async () => {
         try {
-            const response = await axios.get(`${server}/user?userId=${userId}`)
+            const response = await axios.get(`${server}/user`, {
+                params: {userId}
+            })
             setUser(response.data)
         } catch (error) {
             console.log(error)
