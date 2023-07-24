@@ -15,9 +15,7 @@ const Dashboard = () => {
    
     const getUser = async () => {
         try {
-            const response = await axios.get(`${server}/user`, {
-                params: {userId}
-            })
+            const response = await axios.get(`${server}/user?userId=${userId}`)
             setUser(response.data)
         } catch (error) {
             console.log(error)
@@ -90,7 +88,7 @@ const Dashboard = () => {
                                 onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
                                 onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}>
                                 <div
-                                    style={{backgroundImage: `${genderedUser.url}`}}
+                                    style={{backgroundImage: `${genderedUser.url}`}} 
                                     className="card">
                                     <h3>{genderedUser.first_name}</h3>
                                 </div>
