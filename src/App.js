@@ -7,7 +7,7 @@ import {useCookies} from 'react-cookie'
 const App = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
-    const authToken = cookies.AuthToken
+    const authToken = localStorage.getItem('AuthToken');
 
     return (
         <BrowserRouter>

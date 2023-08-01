@@ -70,3 +70,5 @@ const ChatDisplay = ({ user , clickedUser }) => {
 }
 
 export default ChatDisplay
+
+
